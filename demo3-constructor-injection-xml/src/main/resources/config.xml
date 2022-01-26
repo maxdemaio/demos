@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="blogPostService" class="com.maxdemaio.demo.BlogPostService">
+        <constructor-arg name="gen" ref="coolPostGenerator"/>
+        <constructor-arg name="wordCount" value="150"/>
+
+    </bean>
+    <bean id="coolPostGenerator" class="com.maxdemaio.demo.CoolPostGenerator"/>
+
+    <bean id="wittyPostGenerator" class="com.maxdemaio.demo.WittyPostGenerator"/>
+
+</beans>
