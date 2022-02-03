@@ -8,7 +8,7 @@ public class Client {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         BlogPostService srv = (BlogPostService) context.getBean("blogPostService");
-        srv.generatepost();
+        System.out.println(srv.getGens());
     }
 
 }

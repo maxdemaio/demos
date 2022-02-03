@@ -1,38 +1,15 @@
 package com.maxdemaio.demo;
 
+import java.util.List;
+
 public class BlogPostService {
+    private List<PostGenerator> gens;
 
-    private PostGenerator gen;
-    private int wordCount;
-
-    public BlogPostService(PostGenerator gen, int wordCount) {
-        System.out.println("Parameterized Constructor");
-        this.gen = gen;
-        this.wordCount = wordCount;
+    public void setGens(List<PostGenerator> gens) {
+        this.gens = gens;
     }
 
-
-    public BlogPostService() {
-
-    }
-
-    public int getwordCount() {
-        return wordCount;
-    }
-
-    public void setwordCount(int wordCount) {
-        this.wordCount = wordCount;
-    }
-
-    public PostGenerator getgen() {
-        return gen;
-    }
-
-    public void setgen(PostGenerator gen) {
-        this.gen = gen;
-    }
-
-    public void generatepost() {
-        System.out.println(gen.generatePost(wordCount));
+    public List<PostGenerator> getGens() {
+        return gens;
     }
 }

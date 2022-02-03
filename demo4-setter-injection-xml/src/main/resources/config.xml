@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="blogPostService" class="com.maxdemaio.demo.BlogPostService">
-        <property name="gen" ref="wittyPostGenerator"/>
-        <property name="wordCount" value="500"/>
+        <property name="gens">
+            <list>
+                <ref bean="coolPostGenerator" />
+                <ref bean="wittyPostGenerator" />
+            </list>
+        </property>
     </bean>
 
-    <bean id="coolPostGenerator" class="com.maxdemaio.demo.CoolPostGenerator"/>
-
-    <bean id="wittyPostGenerator" class="com.maxdemaio.demo.WittyPostGenerator"/>
+    <bean id="coolPostGenerator" class="com.maxdemaio.demo.CoolPostGenerator" />
+    <bean id="wittyPostGenerator" class="com.maxdemaio.demo.WittyPostGenerator" />
 
 
 </beans>
