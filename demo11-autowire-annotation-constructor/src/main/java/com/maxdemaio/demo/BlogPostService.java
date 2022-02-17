@@ -11,10 +11,10 @@ public class BlogPostService {
     private int wordCount;
 
     @Autowired
-    public BlogPostService(@Qualifier("wittyPostGenerator") PostGenerator gen, @Value("100") int wordCount) {
+    public BlogPostService(@Qualifier("wittyPostGenerator") PostGenerator gen, @Value("110") int wordCount) {
         this.gen = gen;
         this.wordCount = wordCount;
-        System.out.println("parametrized constructor");
+        System.out.println("parameterized constructor");
     }
 
     public int getwordCount() {

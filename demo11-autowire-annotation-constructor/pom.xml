@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>demo10-autowire-annotation-on-property</groupId>
-  <artifactId>demo10-autowire-annotation-on-property</artifactId>
+  <groupId>demo11-autowire-annotation-on-constructor</groupId>
+  <artifactId>demo11-autowire-annotation-on-constructor</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>demo10-autowire-annotation-on-property</name>
+  <name>demo11-autowire-annotation-on-constructor</name>
   <url>http://maven.apache.org</url>
 
   <properties>

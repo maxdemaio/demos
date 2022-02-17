@@ -8,12 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class BlogPostService {
     private PostGenerator gen;
-
-    @Value("120")
     private int wordCount;
 
-    public BlogPostService() {
-        System.out.println("default constructor");
+    @Autowired
+    public BlogPostService(@Qualifier("wittyPostGenerator") PostGenerator gen, @Value("130") int wordCount) {
+        this.gen = gen;
+        this.wordCount = wordCount;
+        System.out.println("parameterized constructor");
     }
 
     public int getwordCount() {
@@ -28,8 +29,6 @@ public class BlogPostService {
         return gen;
     }
 
-    @Autowired
-    @Qualifier("coolPostGenerator")
     public void setgen(PostGenerator gen) {
         this.gen = gen;
     }
