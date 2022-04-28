@@ -7,6 +7,7 @@ public class CustomerServiceImpl implements CustomerService {
     CustomerDAO customerDAO = new CustomerDAOImpl();
     @Override
     public void insert(CustomerDTO customer) {
+        System.out.println("In service layer");
         customerDAO.insert(CustomerDTO.prepareCustomerEntity(customer));
     }
     @Override

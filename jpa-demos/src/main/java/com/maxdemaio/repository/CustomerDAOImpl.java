@@ -7,24 +7,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
 import com.maxdemaio.entity.Customer;
 
 public class CustomerDAOImpl implements CustomerDAO {
-    static Logger logger = Logger.getLogger(CustomerDAOImpl.class);
     Connection con = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
     @Override
     public void insert(Customer customer) {
-        try (FileInputStream fis = new FileInputStream("resources/application.properties");) {
+        try (FileInputStream fis = new FileInputStream("src/main/resources/application.properties");) {
             Properties p = new Properties();
             p.load(fis);
-            String dname = (String) p.get("JDBC_DRIVER");
-            String url = (String) p.get("JDBC_URL");
-            String username = (String) p.get("USER");
-            String password = (String) p.get("PASSWORD");
+            String dname = (String) p.get("jdbc.driverClassName");
+            String url = (String) p.get("spring.datasource.url");
+            String username = (String) p.get("spring.datasource.username");
+            String password = (String) p.get("spring.datasource.password");
             Class.forName(dname);
             // Register driver
             con = DriverManager.getConnection(url, username, password);
@@ -40,9 +38,9 @@ public class CustomerDAOImpl implements CustomerDAO {
             stmt.setInt(6, customer.getPlanId());
             // Execute query
             stmt.executeUpdate();
-            logger.info("Record inserted");
+            System.out.println("Record inserted");
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            System.out.println("error: " + e.getMessage());
         } finally {
             try {
                 // Close the prepared statement
@@ -50,7 +48,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                 // Close the connection
                 con.close();
             } catch (Exception e) {
-                logger.error(e.getMessage(), e);
+                System.out.println("error: " + e.getMessage());
             }
         }
     }
@@ -75,7 +73,7 @@ public class CustomerDAOImpl implements CustomerDAO {
             // Execute query
             result = stmt.executeUpdate();
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            System.out.println("error: " + e.getMessage());
         } finally {
             try {
                 // Close the prepared statement
@@ -83,7 +81,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                 // Close the connection
                 con.close();
             } catch (Exception e) {
-                logger.error(e.getMessage(), e);
+                System.out.println("error: " + e.getMessage());
             }
         }
         return result;
