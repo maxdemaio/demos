@@ -56,13 +56,13 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public int remove(Long phoneNo) {
         int result = 1;
-        try (FileInputStream fis = new FileInputStream("resources/application.properties");) {
+        try (FileInputStream fis = new FileInputStream("src/main/resources/application.properties");) {
             Properties p = new Properties();
             p.load(fis);
-            String dname = (String) p.get("JDBC_DRIVER");
-            String url = (String) p.get("JDBC_URL");
-            String username = (String) p.get("USER");
-            String password = (String) p.get("PASSWORD");
+            String dname = (String) p.get("jdbc.driverClassName");
+            String url = (String) p.get("spring.datasource.url");
+            String username = (String) p.get("spring.datasource.username");
+            String password = (String) p.get("spring.datasource.password");
             Class.forName(dname);
             // Create connection
             con = DriverManager.getConnection(url, username, password);
