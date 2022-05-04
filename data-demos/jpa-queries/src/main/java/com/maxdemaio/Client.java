@@ -6,9 +6,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.maxdemaio.domain.Customer;
-import com.maxdemaio.dto.CustomerDTO;
+import com.maxdemaio.dto.CustomerDto;
 import com.maxdemaio.service.CustomerService;
+
+import java.util.List;
 
 @SpringBootApplication
 public class Client implements CommandLineRunner {
@@ -25,19 +26,19 @@ public class Client implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		CustomerDTO customer1= new CustomerDTO(7022713754L, "Adam", 27, 'M', "Calgary", 1);
-		CustomerDTO customer2= new CustomerDTO(7022713744L, "Susan", 27, 'F', "Alberta", 2);
-		CustomerDTO customer3= new CustomerDTO(7022713745L, "Andrew", 27, 'M', "Chicago", 2);
+		CustomerDto customer1= new CustomerDto(7022713754L, "Adam", 27, 'M', "Calgary", 1);
+		CustomerDto customer2= new CustomerDto(7022713744L, "Susan", 27, 'F', "Alberta", 2);
+		CustomerDto customer3= new CustomerDto(7022713745L, "Andrew", 27, 'M', "Chicago", 2);
 		
 		//invoke service layer method to insert Customer
-		service.insertCustomer(customer1);
-		service.insertCustomer(customer2);
-		service.insertCustomer(customer3);
+//		service.insertCustomer(customer1);
+//		service.insertCustomer(customer2);
+//		service.insertCustomer(customer3);
 		
-		Iterable<Customer> cus = service.getCustomer("Chicago");
+		List<CustomerDto> cus = service.getCustomersByAddress("Chicago");
 
-		for (Customer alist : cus) {
-			System.out.println(alist);
+		for (CustomerDto customer : cus) {
+			System.out.println(customer);
 		}
 		
 	}

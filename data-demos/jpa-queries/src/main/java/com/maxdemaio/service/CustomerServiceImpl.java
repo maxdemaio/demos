@@ -5,24 +5,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.maxdemaio.domain.Customer;
-import com.maxdemaio.dto.CustomerDTO;
+import com.maxdemaio.dto.CustomerDto;
 import com.maxdemaio.repository.CustomerRepository;
 
-@Service("customerService")
-public class CustomerServiceImpl implements CustomerService{
-	  @Autowired
-	  private CustomerRepository  repository; 
-	  
-	public void insertCustomer(CustomerDTO customer) {
-		repository.saveAndFlush(CustomerDTO.prepareCustomerEntity(customer));
-		System.out.println("Record added successfully");
-	}
+import java.util.ArrayList;
+import java.util.List;
 
-	@Override
-	public Iterable<Customer> getCustomer(String address) {
-		
-		return repository.findByAddress(address);
-	}
-	
-	
+@Service("customerService")
+public class CustomerServiceImpl implements CustomerService {
+    @Autowired
+    private CustomerRepository repository;
+
+    public void insertCustomer(CustomerDto customer) {
+        repository.saveAndFlush(CustomerDto.prepareCustomerEntity(customer));
+        System.out.println("Record added successfully");
+    }
+
+    @Override
+    public List<CustomerDto> getCustomersByAddress(String address) {
+        List<Customer> customers = repository.findByAddress(address);
+        List<CustomerDto> custDtos = new ArrayList<>();
+        for (Customer c : customers) {
+            CustomerDto custDto = c.prepareDTO(c);
+            custDtos.add(custDto);
+        }
+        return custDtos;
+    }
+
+
 }
