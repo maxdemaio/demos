@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface CustomerService {
 
-    public void insertCustomer(CustomerDto customer) throws JpaQueriesException;
+    public CustomerDto insertCustomer(CustomerDto customer) throws JpaQueriesException;
 
     public List<CustomerDto> getCustomersByAddress(String address);
 

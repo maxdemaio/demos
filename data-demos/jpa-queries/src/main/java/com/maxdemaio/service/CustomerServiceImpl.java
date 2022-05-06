@@ -29,10 +29,11 @@ public class CustomerServiceImpl implements CustomerService {
         this.repository = repository;
     }
 
-    public void insertCustomer(CustomerDto customer) throws JpaQueriesException {
+    public CustomerDto insertCustomer(CustomerDto customer) throws JpaQueriesException {
         CustomerDtoValidator.validateCustomer(customer);
         repository.saveAndFlush(CustomerDto.prepareCustomerEntity(customer));
         System.out.println("Record added successfully");
+        return customer;
     }
 
     @Override
