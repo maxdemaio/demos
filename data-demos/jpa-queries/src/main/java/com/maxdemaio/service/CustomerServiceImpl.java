@@ -12,12 +12,14 @@ import org.springframework.stereotype.Service;
 import com.maxdemaio.domain.Customer;
 import com.maxdemaio.dto.CustomerDto;
 import com.maxdemaio.repository.CustomerRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository repository;
