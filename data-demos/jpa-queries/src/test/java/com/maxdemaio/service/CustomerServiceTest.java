@@ -68,7 +68,7 @@ public class CustomerServiceTest {
         testCustomerDtos.add(testCustomerDto2);
 
         List<Customer> testCustomers = new ArrayList();
-        for (CustomerDto c: testCustomerDtos) {
+        for (CustomerDto c : testCustomerDtos) {
             testCustomers.add(CustomerDto.prepareCustomerEntity(c));
         }
 
@@ -93,6 +93,19 @@ public class CustomerServiceTest {
         // Then
         CustomerDto actual = customerService.getCustomer(testCustomerDto.getPhoneNumber());
         JSONAssert.assertEquals(objectMapper.writeValueAsString(testCustomerDto), objectMapper.writeValueAsString(actual), JSONCompareMode.NON_EXTENSIBLE);
+    }
+
+    @Test
+    void test_updateCustomer() throws JpaQueriesException, JsonProcessingException, JSONException {
+        // Given
+        Customer testCustomer = new Customer(7022713754L, "Test", 20, 'M', "Canton", 1);
+        Integer planId = 3;
+
+        // When
+        when(mockCustomerRepository.findById(any(Long.class))).thenReturn(Optional.of(testCustomer));
+
+        // Then
+        assertNotNull(customerService.updateCustomer(testCustomer.getPhoneNumber(), planId));
     }
 
     @Test
