@@ -97,7 +97,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    void test_getCustomer_failure_on_validate() throws JpaQueriesException, JsonProcessingException, JSONException {
+    void test_getCustomer_failure_on_validate() {
         // Given
         Long invalidPhoneNo = 1000000000000000L;
 
