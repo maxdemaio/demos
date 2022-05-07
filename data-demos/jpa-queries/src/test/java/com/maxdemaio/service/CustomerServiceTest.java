@@ -23,6 +23,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -54,6 +56,30 @@ public class CustomerServiceTest {
         // Compare JSON string values of POJOs
         CustomerDto actual = customerService.insertCustomer(testCustomerDto);
         JSONAssert.assertEquals(objectMapper.writeValueAsString(testCustomerDto), objectMapper.writeValueAsString(actual), JSONCompareMode.NON_EXTENSIBLE);
+    }
+
+    @Test
+    void test_getCustomersByAddress() throws JpaQueriesException, JsonProcessingException, JSONException {
+        // Given
+        String address = "New London";
+        CustomerDto testCustomerDto1 = new CustomerDto(7022713754L, "Test1", 22, 'M', address, 1);
+        CustomerDto testCustomerDto2 = new CustomerDto(882713754L, "Test2", 26, 'F', address, 2);
+        List<CustomerDto> testCustomerDtos = new ArrayList();
+        testCustomerDtos.add(testCustomerDto1);
+        testCustomerDtos.add(testCustomerDto2);
+
+        List<Customer> testCustomers = new ArrayList();
+        for (CustomerDto c: testCustomerDtos) {
+            testCustomers.add(CustomerDto.prepareCustomerEntity(c));
+        }
+
+        // When
+        when(mockCustomerRepository.findByAddress(any(String.class))).thenReturn(testCustomers);
+
+        // Then
+        // Compare JSON string values of POJOs
+        List<CustomerDto> actual = customerService.getCustomersByAddress("New London");
+        JSONAssert.assertEquals(objectMapper.writeValueAsString(testCustomerDtos), objectMapper.writeValueAsString(actual), JSONCompareMode.NON_EXTENSIBLE);
     }
 
     @Test
