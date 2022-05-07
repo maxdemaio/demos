@@ -13,10 +13,9 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -94,6 +93,15 @@ public class CustomerServiceTest {
         // Then
         CustomerDto actual = customerService.getCustomer(testCustomerDto.getPhoneNumber());
         JSONAssert.assertEquals(objectMapper.writeValueAsString(testCustomerDto), objectMapper.writeValueAsString(actual), JSONCompareMode.NON_EXTENSIBLE);
+    }
+
+    @Test
+    void test_removeCustomer_failure_on_validate() throws JpaQueriesException, JsonProcessingException, JSONException {
+        // Given
+        Long invalidPhoneNo = 1000000000000000L;
+
+        // Then
+        assertThrows(JpaQueriesException.class, () -> customerService.removeCustomer(invalidPhoneNo));
     }
 
     @Test
