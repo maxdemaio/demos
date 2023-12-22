@@ -6,6 +6,19 @@
     <title>Document</title>
   </head>
   <style>
+    #demos {
+      position: fixed;
+      top: 5px;
+      right: 12px;
+      background-color: white;
+      border: 1px solid #eaecef;
+      display: inline;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #0366d6;
+      text-decoration: none;
+      z-index: 999999999;
+    }
     body {
       margin: 0;
     }
@@ -28,11 +41,14 @@
     }
 
     @keyframes scroll-watcher {
-      to {scale: 1 1;}
+      to {
+        scale: 1 1;
+      }
     }
-
   </style>
   <body>
+    <a href="https://maxdemaio.github.io/demos/" id="demos">Back</a>
+
     <div class="scroll-watcher"></div>
     <main>
       <h1>Scroll watcher</h1>
