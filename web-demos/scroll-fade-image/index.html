@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      img {
+        /* starting out scale/opacity */
+        scale: 0.8;
+        opacity: 0;
+        animation: fade-in linear forwards; /*  animation finished, stay at last keyframe */
+        animation-timeline: view(
+
+        ); /* works and we don't need an intersection observer! */
+        animation-range-start: cover; /* when the image is first seen */
+        animation-range-end: 40%; /* contain is totally at top */
+      }
+
+      @keyframes fade-in {
+        to {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+    }
+
+    img {
+      border-radius: 10px;
+    }
+    
+  </style>
+  <body>
+    <main>
+      <h1>Scroll image fade in</h1>
+      <p>
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy ,- mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy
+      </p>
+      <p>
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy ,- mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy
+      </p>
+      <p>
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy ,- mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy
+      </p>
+      <img width="100%" src="../../static/dingo.jpg" alt="demo dingo" />
+      <p>
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy ,- mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        - mihoy
+      </p>
+    </main>
+  </body>
+</html>
