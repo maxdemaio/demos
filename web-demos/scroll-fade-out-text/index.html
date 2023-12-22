@@ -28,22 +28,15 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      img {
-        /* starting out scale/opacity */
-        scale: 0.8;
-        opacity: 0;
-        animation: fade-in linear forwards; /*  animation finished, stay at last keyframe */
-        animation-timeline: view(
-
-        ); /* works and we don't need an intersection observer! */
-        animation-range-start: cover; /* when the image is first seen */
-        animation-range-end: 40%; /* contain is totally at top */
+      .text-fade-out {
+        animation: fade-out linear;
+        animation-timeline: view();
+        animation-range: exit -100px;
       }
 
-      @keyframes fade-in {
+      @keyframes fade-out {
         to {
-          scale: 1;
-          opacity: 1;
+          opacity: 0;
         }
       }
     }
@@ -54,9 +47,46 @@
   </style>
   <body>
     <a href="https://maxdemaio.github.io/demos/" id="demos">Back</a>
-
     <main>
-      <h1>Scroll image fade in</h1>
+      <div class="text-fade-out">
+        <h1>Scroll text fade out</h1>
+        <p>
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy ,- mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy -
+          mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+          - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
+        </p>
+      </div>
+
       <p>
         - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
         - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
@@ -125,41 +155,6 @@
         - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
         - mihoy
       </p>
-      <p>
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy ,- mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
-        - mihoy
-      </p>
-      <img width="100%" src="../../static/dingo.jpg" alt="demo dingo" />
       <p>
         - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
         - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy - mihoy
