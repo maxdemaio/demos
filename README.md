@@ -9,3 +9,5 @@ READMEs are better with pictures so here's a picture of a dingo puppy, aka my de
 ## web demos
 
 - [crt](./web-demos/crt/index.html)
+
+[back home](https://maxdemaio.github.io)
