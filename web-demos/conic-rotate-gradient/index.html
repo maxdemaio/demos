@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>conic rotate gradient</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      @property --r {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+      }
+
+      #hero-button {
+        background: conic-gradient(from var(--r), #222 0%, #eee 10%, #222 20%);
+        animation: rotating 3s linear infinite;
+        cursor: pointer;
+        position: relative; /* allows us to put the ::after div centered inset */
+        width: 200px;
+        height: 60px;
+        border-radius: 50px;
+      }
+
+      #hero-button::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: #111;
+        inset: 4px;
+        border-radius: 45px;
+        z-index: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      @keyframes rotating {
+        0% {
+          --r: 0deg;
+        }
+        100% {
+          --r: 360deg;
+        }
+      }
+
+      span {
+        position: relative;
+        color: white;
+        z-index: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <button id="hero-button">
+        <span>hero button</span>
+      </button>
+    </div>
+  </body>
+</html>
