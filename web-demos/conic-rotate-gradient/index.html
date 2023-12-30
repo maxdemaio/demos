@@ -33,7 +33,7 @@
         initial-value: 0deg;
       }
 
-      #hero-button {
+      .hero-button {
         background: conic-gradient(from var(--r), #414141 0%, white 10%, #414141 20%);
         animation: rotating 3s linear infinite;
         cursor: pointer;
@@ -43,7 +43,7 @@
         border-radius: 30px;
       }
 
-      #hero-button::after {
+      .hero-button::after {
         content: "";
         display: block;
         position: absolute;
@@ -52,10 +52,12 @@
         z-index: 1;
         transition: all 0.3s ease-in-out;
       }
-      #hero-button:hover::after {
+      .hero-button:hover::after {
         background: black;
         box-shadow: 0 0px 30px rgba(255, 255, 255, 0.1), 0 0px 5px rgba(255, 255, 255);
       }
+
+      
 
       @keyframes rotating {
         0% {
@@ -65,6 +67,30 @@
           --r: 360deg;
         }
       }
+
+      .dublay-button {
+        background: conic-gradient(from var(--r), #414141 0%, white 12.5%, #414141 25%, #414141 50%, white 62.5%, #414141 75%);
+        animation: rotating 3s linear infinite;
+        cursor: pointer;
+        position: relative; /* allows us to put the ::after div centered inset */
+        width: 200px;
+        height: 60px;
+        border-radius: 30px;
+      }
+
+      .dublay-button::after {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 3px;
+        border-radius: 27px;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+      }
+      .dublay-button:hover::after {
+        background: black;
+        box-shadow: 0 0px 30px rgba(255, 255, 255, 0.1), 0 0px 5px rgba(255, 255, 255);
+      }
     </style>
   </head>
 
@@ -72,12 +98,18 @@
     <a href="https://maxdemaio.github.io/demos/" id="demos">Back</a>
 
     <div>
-      <button id="hero-button" class="after:bg-neutral-950">
+      <button class="hero-button after:bg-neutral-950">
         <span class="text-white z-10 relative font-bold">hero button</span>
+
       </button>
       
     </div>
-    <button class="bg-neutral-200 text-black shadow-2xl">mihoy
-        </button>
+    <div>
+      <button class="dublay-button after:bg-neutral-950">
+        <span class="text-white z-10 relative font-bold">dublay button</span>
+
+      </button>
+      
+    </div>
   </body>
 </html>
