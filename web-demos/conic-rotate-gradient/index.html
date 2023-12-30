@@ -11,6 +11,8 @@
         height: 100vh;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 20px;
       }
       #demos {
         position: fixed;
@@ -32,24 +34,27 @@
       }
 
       #hero-button {
-        background: conic-gradient(from var(--r), #222 0%, #eee 10%, #222 20%);
+        background: conic-gradient(from var(--r), #414141 0%, white 10%, #414141 20%);
         animation: rotating 3s linear infinite;
         cursor: pointer;
         position: relative; /* allows us to put the ::after div centered inset */
         width: 200px;
         height: 60px;
-        border-radius: 50px;
+        border-radius: 30px;
       }
 
       #hero-button::after {
         content: "";
         display: block;
         position: absolute;
-        background: #111;
-        inset: 4px;
-        border-radius: 45px;
+        inset: 3px;
+        border-radius: 27px;
         z-index: 1;
-        transition: opacity 0.3s ease;
+        transition: all 0.3s ease-in-out;
+      }
+      #hero-button:hover::after {
+        background: black;
+        box-shadow: 0 0px 30px rgba(255, 255, 255, 0.1), 0 0px 5px rgba(255, 255, 255);
       }
 
       @keyframes rotating {
@@ -60,22 +65,19 @@
           --r: 360deg;
         }
       }
-
-      span {
-        position: relative;
-        color: white;
-        z-index: 2;
-      }
     </style>
   </head>
 
-  <body>
+  <body class="bg-neutral-900">
     <a href="https://maxdemaio.github.io/demos/" id="demos">Back</a>
 
     <div>
-      <button id="hero-button">
-        <span>hero button</span>
+      <button id="hero-button" class="after:bg-neutral-950">
+        <span class="text-white z-10 relative font-bold">hero button</span>
       </button>
+      
     </div>
+    <button class="bg-neutral-200 text-black shadow-2xl">mihoy
+        </button>
   </body>
 </html>
