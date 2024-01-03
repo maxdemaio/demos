@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        padding-top: 80px;
-      }
       #demos {
         position: fixed;
         top: 5px;
@@ -21,12 +18,17 @@
         text-decoration: none;
         z-index: 999999999;
       }
+      body {
+        padding-top: 80px;
+        margin: 0; /* Remove default margin to ensure full width */
+      }
       .ayo {
         background-color: white;
         color: black;
-        position: relative;
-        display: flex;
-        gap: 2vmin;
+        display: grid;
+        grid-template-columns: 10% 1fr 10%; /* 10% for the gradients on both sides */
+        grid-template-rows: 100%;
+        grid-template-areas: "gradient-left content gradient-right";
         overflow-x: scroll;
         scroll-snap-type: x mandatory; /* snap to flex items */
       }
@@ -34,90 +36,42 @@
       .ayo::before,
       .ayo::after {
         content: "";
-        position: absolute;
+        height: 100%; /* Full height of the container */
+        position: sticky;
         top: 0;
-        bottom: 0;
-        width: 10%;
+        z-index: 1; /* Ensure the gradient is behind the content */
       }
 
       .ayo::before {
-        left: 0;
+        grid-area: gradient-left;
         background: linear-gradient(
           to right,
           rgb(0, 0, 0) 0%,
-          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
-          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
-          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
-          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
-            /* Fully opaque light color at the end */
+          rgb(0, 0, 0) 20%,
+          rgba(0, 0, 0, 0) 50%,
+          rgba(255, 255, 255, 0) 80%,
+          rgba(255, 255, 255, 0) 100%
         );
       }
 
       .ayo::after {
-        right: 0;
+        grid-area: gradient-right;
         background: linear-gradient(
           to left,
           rgb(0, 0, 0) 0%,
-          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
-          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
-          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
-          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
-        );
-        /* Fully opaque light color at the end */
-      }
-
-      .ayo1 {
-        background-color: white;
-        color: black;
-        position: relative;
-        display: flex;
-        gap: 2vmin;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory; /* snap to flex items */
-      }
-      .ayo2 {
-        background-color: white;
-        color: black;
-        position: relative;
-        display: flex;
-        gap: 2vmin;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory; /* snap to flex items */
-      }
-      .ayo2::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 10%;
-        background: linear-gradient(
-          to left,
-          rgb(0, 0, 0) 0%,
-          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
-          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
-          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
-          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
-            /* Fully opaque light color at the end */
+          rgb(0, 0, 0) 20%,
+          rgba(0, 0, 0, 0) 50%,
+          rgba(255, 255, 255, 0) 80%,
+          rgba(255, 255, 255, 0) 100%
         );
       }
 
-      .ayo1::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 10%;
-        background: linear-gradient(
-          to right,
-          rgb(0, 0, 0) 0%,
-          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
-          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
-          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
-          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
-            /* Fully opaque light color at the end */
-        );
+      .content {
+        grid-area: content;
+        display: flex;
+        gap: 2vmin;
+        scroll-snap-type: x mandatory; /* snap to flex items */
+        /* Additional styles for your content */
       }
     </style>
   </head>
@@ -125,34 +79,39 @@
     <a href="https://maxdemaio.github.io/demos/" id="demos">Back</a>
 
     <div class="ayo">
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-    </div>
-    <div class="ayo1">
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-    </div>
-    <div class="ayo2">
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
-      <span>ayo</span>
+      <div class="content">
+        <!-- Your content goes here -->
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span> <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span> <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <span>ayo</span>
+        <!-- Add more spans as needed -->
+      </div>
     </div>
   </body>
 </html>
