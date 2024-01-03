@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding-top: 80px;
+      }
+      #demos {
+        position: fixed;
+        top: 5px;
+        right: 12px;
+        background-color: white;
+        border: 1px solid #eaecef;
+        display: inline;
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: #0366d6;
+        text-decoration: none;
+        z-index: 999999999;
+      }
+      .ayo {
+        background-color: white;
+        color: black;
+        position: relative;
+        display: flex;
+        gap: 2vmin;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory; /* snap to flex items */
+      }
+
+      .ayo::before,
+      .ayo::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10%;
+      }
+
+      .ayo::before {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          rgb(0, 0, 0) 0%,
+          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
+          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
+          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
+          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
+            /* Fully opaque light color at the end */
+        );
+      }
+
+      .ayo::after {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          rgb(0, 0, 0) 0%,
+          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
+          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
+          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
+          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
+        );
+        /* Fully opaque light color at the end */
+      }
+
+      .ayo1 {
+        background-color: white;
+        color: black;
+        position: relative;
+        display: flex;
+        gap: 2vmin;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory; /* snap to flex items */
+      }
+      .ayo2 {
+        background-color: white;
+        color: black;
+        position: relative;
+        display: flex;
+        gap: 2vmin;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory; /* snap to flex items */
+      }
+      .ayo2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 10%;
+        background: linear-gradient(
+          to left,
+          rgb(0, 0, 0) 0%,
+          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
+          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
+          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
+          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
+            /* Fully opaque light color at the end */
+        );
+      }
+
+      .ayo1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 10%;
+        background: linear-gradient(
+          to right,
+          rgb(0, 0, 0) 0%,
+          /* Dark color at the beginning */ rgb(0, 0, 0) 20%,
+          /* Gradual transition to dark */ rgba(0, 0, 0, 0) 50%,
+          /* Fully transparent in the middle */ rgba(255, 255, 255, 0) 80%,
+          /* Gradual transition to light */ rgba(255, 255, 255, 0) 100%
+            /* Fully opaque light color at the end */
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://maxdemaio.github.io/demos/" id="demos">Back</a>
+
+    <div class="ayo">
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+    </div>
+    <div class="ayo1">
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+    </div>
+    <div class="ayo2">
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+    </div>
+  </body>
+</html>

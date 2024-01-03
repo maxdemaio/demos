@@ -33,8 +33,17 @@
         initial-value: 0deg;
       }
 
+      :root {
+        --r: 0deg; /* Initial angle, adjust as needed */
+      }
+
       .hero-button {
-        background: conic-gradient(from var(--r), #414141 0%, white 10%, #414141 20%);
+        background: conic-gradient(
+          from var(--r),
+          #414141 0%,
+          white 10%,
+          #414141 20%
+        );
         animation: rotating 3s linear infinite;
         cursor: pointer;
         position: relative; /* allows us to put the ::after div centered inset */
@@ -54,10 +63,9 @@
       }
       .hero-button:hover::after {
         background: black;
-        box-shadow: 0 0px 30px rgba(255, 255, 255, 0.1), 0 0px 5px rgba(255, 255, 255);
+        box-shadow: 0 0px 30px rgba(255, 255, 255, 0.1),
+          0 0px 5px rgba(255, 255, 255);
       }
-
-      
 
       @keyframes rotating {
         0% {
@@ -69,7 +77,15 @@
       }
 
       .dublay-button {
-        background: conic-gradient(from var(--r), #414141 0%, white 12.5%, #414141 25%, #414141 50%, white 62.5%, #414141 75%);
+        background: conic-gradient(
+          from var(--r),
+          #414141 0%,
+          white 12.5%,
+          #414141 25%,
+          #414141 50%,
+          white 62.5%,
+          #414141 75%
+        );
         animation: rotating 3s linear infinite;
         cursor: pointer;
         position: relative; /* allows us to put the ::after div centered inset */
@@ -89,7 +105,8 @@
       }
       .dublay-button:hover::after {
         background: black;
-        box-shadow: 0 0px 30px rgba(255, 255, 255, 0.1), 0 0px 5px rgba(255, 255, 255);
+        box-shadow: 0 0px 30px rgba(255, 255, 255, 0.1),
+          0 0px 5px rgba(255, 255, 255);
       }
     </style>
   </head>
@@ -100,16 +117,12 @@
     <div>
       <button class="hero-button after:bg-neutral-950">
         <span class="text-white z-10 relative font-bold">hero button</span>
-
       </button>
-      
     </div>
     <div>
       <button class="dublay-button after:bg-neutral-950">
         <span class="text-white z-10 relative font-bold">dublay button</span>
-
       </button>
-      
     </div>
   </body>
 </html>
