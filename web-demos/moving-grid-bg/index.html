@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .moving-grid {
+        height: 2000px;
+        background-size: 3rem 3rem;
+        background-image: linear-gradient(to right, #8882 1px, transparent 1px),
+          linear-gradient(to bottom, #8882 1px, transparent 1px);
+        animation: movingbackground 10s linear infinite !important;
+      }
+
+      @keyframes movingbackground {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="moving-grid">test</div>
+  </body>
+</html>

@@ -5,113 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      #demos {
-        position: fixed;
-        top: 5px;
-        right: 12px;
-        background-color: white;
-        border: 1px solid #eaecef;
-        display: inline;
-        padding: 5px 10px;
-        border-radius: 4px;
-        color: #0366d6;
-        text-decoration: none;
-        z-index: 999999999;
-      }
       body {
         padding-top: 80px;
-        margin: 0; /* Remove default margin to ensure full width */
+        margin: 0;
       }
       .ayo {
-        background-color: white;
+        padding: 50px;
+        background-color: rgb(9, 9, 11);
         color: black;
-        display: grid;
-        grid-template-columns: 10% 1fr 10%; /* 10% for the gradients on both sides */
-        grid-template-rows: 100%;
-        grid-template-areas: "gradient-left content gradient-right";
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory; /* snap to flex items */
-      }
-
-      .ayo::before,
-      .ayo::after {
-        content: "";
-        height: 100%; /* Full height of the container */
-        position: sticky;
-        top: 0;
-        z-index: 1; /* Ensure the gradient is behind the content */
-      }
-
-      .ayo::before {
-        grid-area: gradient-left;
-        background: linear-gradient(
-          to right,
-          rgb(0, 0, 0) 0%,
-          rgb(0, 0, 0) 20%,
-          rgba(0, 0, 0, 0) 50%,
-          rgba(255, 255, 255, 0) 80%,
-          rgba(255, 255, 255, 0) 100%
-        );
-      }
-
-      .ayo::after {
-        grid-area: gradient-right;
-        background: linear-gradient(
-          to left,
-          rgb(0, 0, 0) 0%,
-          rgb(0, 0, 0) 20%,
-          rgba(0, 0, 0, 0) 50%,
-          rgba(255, 255, 255, 0) 80%,
-          rgba(255, 255, 255, 0) 100%
-        );
-      }
-
-      .content {
-        grid-area: content;
+        position: relative;
         display: flex;
         gap: 2vmin;
-        scroll-snap-type: x mandatory; /* snap to flex items */
-        /* Additional styles for your content */
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        background: linear-gradient(
+            to right,
+            rgb(0, 0, 0) 0%,
+            rgb(0, 0, 0) 10%,
+            /* Adjust this value to reduce black on the left */ rgba(0, 0, 0, 0)
+              35%,
+            /* Increase this value for more white on the left */
+              rgba(255, 255, 255, 0) 65%,
+            /* Increase this value for more white in the middle */
+              rgba(255, 255, 255, 0) 100%
+          ),
+          linear-gradient(
+            to left,
+            rgb(0, 0, 0) 0%,
+            rgb(0, 0, 0) 10%,
+            /* Adjust this value to reduce black on the right */
+              rgba(0, 0, 0, 0) 35%,
+            /* Increase this value for more white on the right */
+              rgba(255, 255, 255, 0) 65%,
+            /* Increase this value for more white in the middle */
+              rgba(255, 255, 255, 0) 100%
+          );
       }
     </style>
   </head>
   <body>
-    <a href="https://maxdemaio.github.io/demos/" id="demos">Back</a>
-
     <div class="ayo">
-      <div class="content">
-        <!-- Your content goes here -->
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span> <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span> <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <span>ayo</span>
-        <!-- Add more spans as needed -->
-      </div>
+      <!-- Your content goes here -->
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span> <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span> <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <span>ayo</span>
+      <!-- Add more spans as needed -->
     </div>
   </body>
 </html>

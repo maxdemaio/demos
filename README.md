@@ -16,5 +16,6 @@ READMEs are better with pictures so here's a picture of a dingo puppy, aka my de
 - [scroll text fade out](./web-demos/scroll-fade-out-text/index.html) (@scroll-timeline note older browsers need polyfill)
 - [rotating conic gradient button](./web-demos/conic-rotate-gradient/index.html) (@property in CSS is experimental)
 - [linear gradients](./web-demos/linear-gradient/index.html)
+- [moving grid background](./web-demos/moving-grid-bg/index.html)
 
 [back home](https://maxdemaio.github.io)
