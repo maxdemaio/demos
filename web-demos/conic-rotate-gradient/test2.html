@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hero-button {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%; /* Ensures the element is circular */
+        background: 
+      /* Inner background color */ radial-gradient(
+            circle,
+            transparent 70%,
+            blue 70%
+          ),
+          /* Conic gradient for the border */
+            conic-gradient(
+              from var(--r),
+              #414141 0%,
+              white 12.5%,
+              #414141 25%,
+              #414141 50%,
+              white 62.5%,
+              #414141 75%
+            );
+        background-size: cover; /* Ensures the radial gradient covers the entire element */
+        overflow: hidden; /* Hide any overflowing content */
+      }
+
+      .hero-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: blue; /* Set the inner background color */
+        border-radius: inherit; /* Inherit border-radius from parent */
+        mix-blend-mode: multiply; /* Blend the conic gradient with the background */
+        animation: rotating 3s linear infinite;
+      }
+
+      @keyframes rotating {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="hero-button">
+      Some text here!
+    </div>
+  </body>
+</html>
