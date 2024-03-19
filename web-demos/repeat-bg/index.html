@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      height: 2000px;
+      width: 100vw;
+      position: relative;
+      z-index: 0;
+      margin: 0;
+      background: linear-gradient(to left, rgb(19, 19, 19), black);
+      color: white;
+    }
+    body::before {
+      top: 0;
+      right: 0;
+      content: " ";
+      display: block;
+      position: absolute;
+      background-image: url("./texture.png");
+      background-repeat: repeat;
+      width: 1000px; /* width of the image, only make smaller than this */
+      height: 100%;
+      z-index: -1;
+      mask-image: linear-gradient(to left, red, transparent);
+    }
+/* 
+    body::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      mask-image: linear-gradient(to left, transparent, white 0%, transparent);
+    } */
+
+    .mask {
+      mask-image: linear-gradient(to left, red, transparent);
+      color: white;
+    }
+  </style>
+  <body>
+    <div>testing</div>
+    <span class="mask">mask test!</span>
+  </body>
+</html>
